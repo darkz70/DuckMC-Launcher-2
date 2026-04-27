@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="default_theme_color">#FFD700</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="ui_bg_color">#1A1A1A</color>
+    <color name="right_menu_color">#2A2A2A</color>
+    <color name="icon_background_color">#FFFFFF</color>
+    <color name="primary_text">#FFFFFF</color>
+    <color name="yellow_accent">#FFD700</color>
+    <color name="yellow_accent_dark">#E6C200</color>
+    <color name="dark_bg">#1A1A1A</color>
+    <color name="dark_bg_secondary">#2A2A2A</color>
+    <color name="dark_text">#1A1A1A</color>
+    <color name="text_secondary">#B0B0B0</color>
+</resources>
