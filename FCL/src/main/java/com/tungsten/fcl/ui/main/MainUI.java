@@ -133,11 +133,15 @@ public class MainUI extends FCLCommonUI implements View.OnClickListener {
 
     private void checkAnnouncement() {
         // Announcements disabled
-        announcementContainer.setVisibility(View.GONE);
+        if (announcementContainer != null) {
+            announcementContainer.setVisibility(View.GONE);
+        }
     }
 
     private void hideAnnouncement() {
-        announcementContainer.setVisibility(View.GONE);
+        if (announcementContainer != null) {
+            announcementContainer.setVisibility(View.GONE);
+        }
         if (announcement != null) {
             announcement.hide(getContext());
         }
