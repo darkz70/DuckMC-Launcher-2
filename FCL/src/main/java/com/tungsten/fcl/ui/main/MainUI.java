@@ -58,14 +58,15 @@ public class MainUI extends FCLCommonUI implements View.OnClickListener {
     public void onCreate() {
         super.onCreate();
 
-        announcementContainer = findViewById(R.id.announcement_container);
-        announcementLayout = findViewById(R.id.announcement_layout);
-        title = findViewById(R.id.title);
-        announcementView = findViewById(R.id.announcement);
-        date = findViewById(R.id.date);
-        hide = findViewById(R.id.hide);
-        ThemeEngine.getInstance().registerEvent(announcementLayout, () -> announcementLayout.getBackground().setTint(ThemeEngine.getInstance().getTheme().getColor()));
-        hide.setOnClickListener(this);
+        // Announcement UI removed
+        // announcementContainer = findViewById(R.id.announcement_container);
+        // announcementLayout = findViewById(R.id.announcement_layout);
+        // title = findViewById(R.id.title);
+        // announcementView = findViewById(R.id.announcement);
+        // date = findViewById(R.id.date);
+        // hide = findViewById(R.id.hide);
+        // ThemeEngine.getInstance().registerEvent(announcementLayout, () -> announcementLayout.getBackground().setTint(ThemeEngine.getInstance().getTheme().getColor()));
+        // hide.setOnClickListener(this);
 
         skinContainer = findViewById(R.id.skin_container);
         renderer = new SkinRenderer(getContext());
@@ -170,18 +171,6 @@ public class MainUI extends FCLCommonUI implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        if (view == hide) {
-            if (announcement != null && announcement.isSignificant()) {
-                FCLAlertDialog.Builder builder = new FCLAlertDialog.Builder(getContext());
-                builder.setAlertLevel(FCLAlertDialog.AlertLevel.ALERT);
-                builder.setCancelable(false);
-                builder.setMessage(getContext().getString(R.string.announcement_significant));
-                builder.setPositiveButton(this::hideAnnouncement);
-                builder.setNegativeButton(null);
-                builder.create().show();
-            } else {
-                hideAnnouncement();
-            }
-        }
+        // Announcement click handler removed
     }
 }

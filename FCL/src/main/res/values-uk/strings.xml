@@ -90,8 +90,6 @@
     <string name="action_share">Поділитися</string>
     <string name="action_skip">Пропустити</string>
 
-    <string name="announcement">Оголошення: %s</string>
-    <string name="announcement_significant">Це оголошення важливе. Підтвердіть, що ви прочитали його, перш ніж приховати.</string>
 
     <string name="archive_author">Автори</string>
     <string name="archive_date">Дата публікації</string>
