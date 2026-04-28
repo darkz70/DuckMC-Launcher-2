@@ -42,7 +42,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.duckmc.fcl
+        applicationId = "com.tungsten.fcl"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1302
