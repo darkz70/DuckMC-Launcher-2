@@ -29,12 +29,20 @@
     <string name="account">Account</string>
     <string name="version">Version</string>
     <string name="launch_mode">Launch mode</string>
-    <string name="manage">Manage</string>
-    <string name="download">Download</string>
+    <string name="home">Home</string>
+    <string name="manage">Manage Profiles</string>
+    <string name="download">Downloads</string>
     <string name="manage_download">Download Hub</string>
+    <string name="download_versions">Versions</string>
+    <string name="download_modpacks">Modpacks</string>
+    <string name="download_mods">Mods</string>
+    <string name="download_resource_packs">Resource Packs</string>
+    <string name="download_worlds">Worlds</string>
+    <string name="download_shaders">Shaders</string>
+    <string name="servers">Servers</string>
     <string name="controller">Controller</string>
     <string name="multiplayer">Multiplayer</string>
-    <string name="setting">Setting</string>
+    <string name="setting">Settings</string>
     <string name="menu">Menu</string>
     
     <string name="about">About</string>
