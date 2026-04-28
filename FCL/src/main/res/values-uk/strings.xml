@@ -890,7 +890,6 @@
     <string name="install_apk">Встановити лаунчер</string>
     <string name="modpack_download_warn_title">Попередження</string>
     <string name="modpack_download_warn_msg">Більшість модпаків розроблені для ПК, тому можливі збої. Розробник лаунчера не несе відповідальності за сумісність модпаків.</string>
-    <string name="guide_theme2">Якщо текст справа відображається нечітко, натисніть тут, потім «Налаштування лаунчера» і виберіть «Додатковий колір теми»</string>
     <string name="joystick_l">Лівий стік</string>
     <string name="gamepad_dpad">Хрестовина</string>
     <string name="gamepad_button_binding">Прив\'язка кнопок геймпада</string>

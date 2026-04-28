@@ -985,7 +985,6 @@
     <string name="install_apk">安裝apk文件</string>
     <string name="modpack_download_warn_title">注意</string>
     <string name="modpack_download_warn_msg">喺安裝前，你需要明白，絕大多數整合包都係畀電腦端製作嘅，所以當你嘗試啟動時會有極大概率出現崩潰或其他問題，呢往往唔係喺啟動器層面上能解決嘅問題。所以你需要自己了解相關知識後嘗試自己解決，或尋求其他人幫忙（唔好詢問啟動器開發者！）。</string>
-    <string name="guide_theme2">如果你發現右側嘅文字顏色睇唔清可以喺點擊呢度，再點擊「啟動器設置」，設置裡面嘅「次要主題色」即可</string>
     <string name="menu_settings_gamepad_button_binding">按鍵綁定</string>
     <string name="menu_settings_gamepad_open_button">打開</string>
     <string name="joystick_l">左搖桿</string>
