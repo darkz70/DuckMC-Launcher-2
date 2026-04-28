@@ -222,15 +222,15 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
                     }
                 }
                 uiManager.init {
-                    home.setOnSelectListener(this@MainActivity)
-                    manage.setOnSelectListener(this@MainActivity)
-                    download.setOnSelectListener(this@MainActivity)
-                    manage_download.setOnSelectListener(this@MainActivity)
-                    controller.setOnSelectListener(this@MainActivity)
-                    multiplayer.setOnSelectListener(this@MainActivity)
-                    setting.setOnSelectListener(this@MainActivity)
-                    home.setSelected(true)
-                    menu_toggle.setOnClickListener {
+                    binding.home.setOnSelectListener(this@MainActivity)
+                    binding.manage.setOnSelectListener(this@MainActivity)
+                    binding.download.setOnSelectListener(this@MainActivity)
+                    binding.manage_download.setOnSelectListener(this@MainActivity)
+                    binding.controller.setOnSelectListener(this@MainActivity)
+                    binding.multiplayer.setOnSelectListener(this@MainActivity)
+                    binding.setting.setOnSelectListener(this@MainActivity)
+                    binding.home.setSelected(true)
+                    binding.menu_toggle.setOnClickListener {
                         leftMenu.visibility = if (leftMenu.visibility == View.GONE) View.VISIBLE else View.GONE
                     }
                     home.setOnLongClickListener {
@@ -356,7 +356,7 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
                     uiManager.switchUI(uiManager.downloadUI)
                 }
 
-                manage_download -> {
+                binding.manage_download -> {
                     title.setTextWithAnim(getString(R.string.download))
                     uiManager.switchUI(uiManager.downloadUI)
                 }
