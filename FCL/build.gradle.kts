@@ -62,7 +62,7 @@ android {
         configureEach {
             resValue("string", "app_version", defaultConfig.versionName.toString())
             resValue("string", "curse_api_key", curseApiKey.toString())
-            resValue("string", "oauth_api_key", oauthApiKey.toString())
+            resValue("string", "oauth_api_key", (oauthApiKey ?: "6d35027e-621d-4893-88c4-f9cbe4053690").toString())
         }
     }
 
