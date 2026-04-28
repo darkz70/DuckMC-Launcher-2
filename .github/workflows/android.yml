@@ -38,13 +38,57 @@ jobs:
         name: apk
         path: FCL/build/outputs/apk/release/
     
-    - name: Upload APK to Release (Latest)
+    - name: Get APK filename
+      id: apk
+      run: |
+        APK_FILE=$(find FCL/build/outputs/apk/release -name "*.apk" | head -1)
+        echo "filename=$(basename $APK_FILE)" >> $GITHUB_OUTPUT
+        echo "path=$APK_FILE" >> $GITHUB_OUTPUT
+    
+    - name: Create or Update Release
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      uses: softprops/action-gh-release@v1
+      uses: actions/github-script@v7
       with:
-        tag_name: latest
-        files: FCL/build/outputs/apk/release/*.apk
-        prerelease: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
+        script: |
+          const fs = require('fs');
+          
+          try {
+            const release = await github.rest.repos.getReleaseByTag({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag: 'latest'
+            });
+            
+            for (const asset of release.data.assets) {
+              await github.rest.repos.deleteReleaseAsset({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                asset_id: asset.id
+              });
+            }
+            
+            release_id = release.data.id;
+          } catch (error) {
+            const newRelease = await github.rest.repos.createRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: 'latest',
+              name: 'Latest Build',
+              prerelease: true
+            });
+            release_id = newRelease.data.id;
+          }
+          
+          const apkPath = '${{ steps.apk.outputs.path }}';
+          const apkName = '${{ steps.apk.outputs.filename }}';
+          
+          if (fs.existsSync(apkPath)) {
+            await github.rest.repos.uploadReleaseAsset({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: release_id,
+              name: apkName,
+              data: fs.readFileSync(apkPath)
+            });
+          }
+          
