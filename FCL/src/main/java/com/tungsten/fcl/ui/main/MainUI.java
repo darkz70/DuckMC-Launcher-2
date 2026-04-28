@@ -131,22 +131,8 @@ public class MainUI extends FCLCommonUI implements View.OnClickListener {
     }
 
     private void checkAnnouncement() {
-        try {
-            String url = LocaleUtils.isChinese(getContext()) ? ANNOUNCEMENT_URL_CN : ANNOUNCEMENT_URL;
-            Task.supplyAsync(() -> HttpRequest.HttpGetRequest.GET(url).getJson(Announcement.class))
-                    .thenAcceptAsync(Schedulers.androidUIThread(), announcement -> {
-                        this.announcement = announcement;
-                        if (!announcement.shouldDisplay(getContext()))
-                            return;
-                        announcementContainer.setVisibility(View.VISIBLE);
-                        title.setText(AndroidUtils.getLocalizedText(getContext(), "announcement", announcement.getDisplayTitle(getContext())));
-                        announcementView.setText(announcement.getDisplayContent(getContext()));
-                        date.setText(AndroidUtils.getLocalizedText(getContext(), "update_date", announcement.getDate()));
-                    }).start();
-        } catch (Exception e) {
-            e.printStackTrace();
-            Logging.LOG.log(Level.WARNING, "Failed to get announcement!", e);
-        }
+        // Announcements disabled
+        announcementContainer.setVisibility(View.GONE);
     }
 
     private void hideAnnouncement() {
