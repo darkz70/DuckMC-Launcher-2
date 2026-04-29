@@ -242,7 +242,7 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
                         startActivity(Intent(this@MainActivity, ShellActivity::class.java))
                         true
                     }
-                    UpdateChecker.getInstance().checkAuto(this@MainActivity).start()
+                    // UpdateChecker.getInstance().checkAuto(this@MainActivity).start() // Disabled update checking
                     if (!checkNotificationPermission() && getSharedPreferences(
                             "launcher",
                             MODE_PRIVATE
