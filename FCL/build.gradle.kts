@@ -12,7 +12,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tungsten.fcl"
+    namespace = "com.duckmc.fcl"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     var localProperty: Properties? = null
@@ -42,7 +42,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.tungsten.fcl"
+        applicationId = "com.duckmc.fcl"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1302
