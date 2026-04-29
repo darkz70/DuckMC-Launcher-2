@@ -29,9 +29,9 @@ android {
     signingConfigs {
         create("FCLKey") {
             storeFile = file("../key-store.jks")
-            storePassword = pwd
+            storePassword = pwd ?: ""
             keyAlias = "FCL-Key"
-            keyPassword = pwd
+            keyPassword = pwd ?: ""
         }
         create("FCLDebugKey") {
             storeFile = file("../debug-key.jks")
