@@ -33,8 +33,7 @@ import androidx.palette.graphics.Palette;
 import com.tungsten.fcl.R;
 import com.tungsten.fcl.activity.MainActivity;
 import com.tungsten.fcl.setting.DownloadProviders;
-import com.tungsten.fcl.upgrade.UpdateChecker;
-import com.tungsten.fcl.upgrade.GitHubUpdateChecker;
+
 import com.tungsten.fcl.util.AndroidUtils;
 import com.tungsten.fcl.util.FXUtils;
 import com.tungsten.fcl.util.RequestCodes;
@@ -75,7 +74,6 @@ public class LauncherSettingPage extends FCLCommonPage implements View.OnClickLi
     public static final long ONE_DAY = 1000 * 60 * 60 * 24;
 
     private FCLSpinner<String> language;
-    private FCLButton checkUpdate;
     private FCLButton clearCache;
     private FCLButton exportLog;
     private FCLButton requestAudioRecord;
@@ -124,7 +122,6 @@ public class LauncherSettingPage extends FCLCommonPage implements View.OnClickLi
         super.onCreate();
         sharedPreferences = getActivity().getSharedPreferences("launcher", MODE_PRIVATE);
         language = findViewById(R.id.language);
-        checkUpdate = findViewById(R.id.check_update);
         clearCache = findViewById(R.id.clear_cache);
         exportLog = findViewById(R.id.export_log);
         requestAudioRecord = findViewById(R.id.request_audio_record);
@@ -161,7 +158,6 @@ public class LauncherSettingPage extends FCLCommonPage implements View.OnClickLi
         autoThreads = findViewById(R.id.check_auto_threads);
         threads = findViewById(R.id.threads);
 
-        checkUpdate.setOnClickListener(this);
         clearCache.setOnClickListener(this);
         exportLog.setOnClickListener(this);
         requestAudioRecord.setOnClickListener(this);
@@ -316,9 +312,6 @@ public class LauncherSettingPage extends FCLCommonPage implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        if (v == checkUpdate) {
-            GitHubUpdateChecker.getInstance().checkUpdate(getContext()).start();
-        }
         if (v == clearCache) {
             FileUtils.cleanDirectoryQuietly(new File(FCLPath.CACHE_DIR).getParentFile());
         }
