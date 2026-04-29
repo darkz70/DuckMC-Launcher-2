@@ -7,7 +7,6 @@
     android:autoMirrored="true"
     android:tint="@android:color/white">
     <path
-        android:fillColor="none"
         android:strokeColor="@android:color/white"
         android:strokeWidth="2"
         android:strokeLineCap="round"
